@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      width: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      width: 140px;
+      padding-inline: 16px;
+      background-color: rgb(137, 216, 137);
+      outline: none;
+      border: none;
+      padding-block: 8px;
+      border: 1px solid rgb(123, 123, 245);
+    }
+  </style>
+  <body class="">
+    <button class="btn">change color</button>
+    <dialog open="false">
+        this is a dialog
+    </dialog>
+    <script>
+      let letters = "0123456789ABCDEF";
+      const btn = document.querySelector(".btn");
+
+      // HTML color code starts with #
+
+      let produceColor = () => {
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+      };
+
+      // Generating 6 times as HTML color code
+      // consist of 6 letter or digits
+
+      btn.addEventListener(
+        "click",
+        (e) => {
+          document.body.style.backgroundColor = produceColor();
+        },
+        true
+      );
+
+
+      
+
+      console.log(color);
+    </script>
+  </body>
+</html>
